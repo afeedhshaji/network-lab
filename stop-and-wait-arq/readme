@@ -1,0 +1,50 @@
+*******************************************************
+*  Name      :  Afeedh Shaji     
+*  Reg. No.  :  B170282CS            
+*  Course    :  CS3093D           
+*  LAB#      :  4 (b)                
+*******************************************************
+
+
+                 Read Me
+
+
+*******************************************************
+*  Problem description
+*******************************************************
+
+Create a socket that implements stop and wait protocol
+and analyze the RTT for varying message sizes.
+
+*******************************************************
+*  Source files
+*******************************************************
+
+Name:  sender.c
+   Client side.
+
+Name: reciever.c
+   Server side.
+
+*******************************************************
+*  Circumstances of programs
+*******************************************************
+
+   This program works and runs as intended.
+
+   Simulates Stop-and-wait ARQ.
+  
+   The program was tested on :
+	gcc version: 10.1.0
+
+*******************************************************
+*  How to build and run the program
+*******************************************************
+
+1. Run the sender side (from another terminal window):
+   gcc sender.c -o sender
+   ./sender
+
+2. Run the client side (from another terminal window):
+   gcc reciever.c -o reciever
+   ./reciever

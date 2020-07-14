@@ -1,0 +1,64 @@
+*******************************************************
+*  Name      :  Afeedh Shaji     
+*  Reg. No.  :  B170282CS            
+*  Course    :  CS3093D           
+*  LAB#      :  5               
+*******************************************************
+
+
+                 Read Me
+
+
+*******************************************************
+*  Problem description
+*******************************************************
+
+Implementing fully concurrent application with a TCP server
+acting as a directory server and client programs allowing
+concurrent connection and message transfer (Eg. Chat system).
+
+*******************************************************
+*  Source files
+*******************************************************
+
+Name:  client.c
+   Client side.
+
+Name: server.c
+   Server side.
+   
+*******************************************************
+*  Circumstances of programs
+*******************************************************
+
+   This program works and runs as intended.
+
+   Implements a fully concurrent TCP server that can handle
+   multiple sockets at once using synchronous I/O multiplexing.
+   Also, allows transfer of transfer of small files between the
+   different connected clients.
+  
+   The program was tested on :
+	gcc version: 10.1.0
+
+*******************************************************
+*  How to build and run the program
+*******************************************************
+
+1. Run the server side (from another terminal window):
+   gcc server.c -o server
+   ./server
+
+2. Run the client side (from another terminal window):
+   gcc client.c -o client
+   ./client
+
+3. Each client connected to the socket can broadcast any
+   message to the rest of the connected clients concurrently
+   except itself by typing anything and pressing Enter.
+
+4. The client can transfer files by sending a special type of
+   message so that other connected clients can identify that
+   it's going to recieve a file and prepare for it. It's as follows:
+
+   send_file <file_name>

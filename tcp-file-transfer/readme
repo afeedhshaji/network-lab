@@ -1,0 +1,73 @@
+*******************************************************
+*  Name      :  Afeedh Shaji     
+*  Reg. No.  :  B170282CS            
+*  Course    :  CS3093D           
+*  LAB#      :  4 (a)           
+*******************************************************
+
+
+                 Read Me
+
+
+*******************************************************
+*  Problem description
+*******************************************************
+
+Write a client/server program with the socket interface.
+The client program may send out the words to the server
+once the user presses "Enter" and the server will respond
+to these words with any meaningless terms. However, the
+server will close the connection once it receives the word
+"Bye". Also, once someone keys in "GivemeyourVideo", the 
+server will immediately send out a 50 MB data file with 
+message size of 500 bytes. Calculate and record the data
+transmission rate every 0.1 second for a 50 MB data
+transmission with message size of 500 bytes. Use xgraph
+and gnuplot to display the results.
+
+*******************************************************
+*  Source files
+*******************************************************
+
+Name:  client.c
+   Client side.
+
+Name: server.c
+   Server side.
+
+*******************************************************
+*  Circumstances of programs
+*******************************************************
+
+   This program works and runs as intended.
+
+   The test input video file must be named as "demo.mp4".
+   (I know it looks hard-coded because of shortage of time.
+   Might change the code to configure file names from the
+   command line in future). Also, make sure to have gnuplot
+   installed.
+  
+   The program was tested on :
+	gcc version: 10.1.0
+   gnuplot 5.2 patchlevel 8
+
+*******************************************************
+*  How to build and run the program
+*******************************************************
+
+1. Run the server side (from another terminal window):
+   gcc server.c -o server
+   ./server
+
+2. Run the client side (from another terminal window):
+   gcc client.c -o client
+   ./client
+
+3. Send messages from the client to the server by typing anything
+   and pressing Enter. The server sends back a random string. If
+   you specifically send "GivemeyourVideo", the server sends back
+   a video in chunks of 500 bytes size and the client bundles up
+   all the chunks and saves it as "output.mp4".
+
+4. When the video is sent, the rate at which the chunks are sent
+   is recorded and plotted using gnuplot.

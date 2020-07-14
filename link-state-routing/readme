@@ -1,0 +1,45 @@
+*******************************************************
+*  Name      :  Afeedh Shaji     
+*  Reg. No.  :  B170282CS            
+*  Course    :  CS3093D           
+*  LAB#      :  6 (b)               
+*******************************************************
+
+
+                 Read Me
+
+
+*******************************************************
+*  Problem description
+*******************************************************
+
+Implementing Link State Routing (Dijkstra’s Algorithm)
+that will simulate generating a forwarding table for 
+a graph sent in as a std input.
+
+*******************************************************
+*  Source files
+*******************************************************
+
+Name:  dijikstra.c
+   Link State Routing algorithm.
+   
+*******************************************************
+*  Circumstances of programs
+*******************************************************
+
+   This program works and runs as intended.
+
+   Implements dijikstra algorithm and prints the simulated
+   routing table in the console.
+  
+   The program was tested on :
+	gcc version: 10.1.0
+
+*******************************************************
+*  How to build and run the program
+*******************************************************
+
+1. Run the code and give the cost matrix values as input:
+   gcc dijikstra.c -o dijikstra
+   ./dijikstra
