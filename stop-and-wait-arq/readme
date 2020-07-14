@@ -45,6 +45,6 @@ Name: reciever.c
    gcc sender.c -o sender
    ./sender
 
-2. Run the client side (from another terminal window):
+2. Run the reciever side (from another terminal window):
    gcc reciever.c -o reciever
    ./reciever
