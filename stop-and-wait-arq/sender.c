@@ -7,6 +7,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <netdb.h>
+#include <time.h>
 
 #define HOST "127.0.0.1"
 #define PORT "8080"
@@ -28,6 +29,9 @@ int main(int argc, char *argv[])
     socklen_t addr_size;
     struct hostent *host;
     int counter = 0;
+    clock_t t;
+    double time_taken;
+    struct timeval start, end;
 
     host = gethostbyname(HOST);
 
@@ -60,6 +64,8 @@ int main(int argc, char *argv[])
 
         sendto(senderSocket, &packet, sizeof(packet), 0, (struct sockaddr *)&receiverAddr, addr_size);
 
+        // Calculate the RTT
+        gettimeofday(&start, NULL);
         printf("Sent pkt with seq number %d\n", packet.seqnum);
 
         /* set receive UDP message timeout */
@@ -73,7 +79,12 @@ int main(int argc, char *argv[])
                 // Message Received
                 if (recvPacket.ACK == counter + 1)
                 {
-                    printf("Ack received for %d\n\n", recvPacket.ACK);
+                    gettimeofday(&end, NULL);
+                    time_taken = (end.tv_sec - start.tv_sec) * 1e6;
+                    time_taken = (time_taken + (end.tv_usec -
+                                                start.tv_usec)) *
+                                 1e-6;
+                    printf("Ack received for %d. RTT : %f seconds\n\n", recvPacket.ACK, time_taken);
                     counter++;
                     break;
                 }
