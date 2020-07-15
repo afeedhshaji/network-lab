@@ -35,7 +35,7 @@ Name: server.c
 
    Implements a fully concurrent TCP server that can handle
    multiple sockets at once using synchronous I/O multiplexing.
-   Also, allows transfer of transfer of small files between the
+   Also, allows transfer of small files between the
    different connected clients.
   
    The program was tested on :

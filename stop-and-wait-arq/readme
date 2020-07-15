@@ -32,7 +32,8 @@ Name: reciever.c
 
    This program works and runs as intended.
 
-   Simulates Stop-and-wait ARQ.
+   Simulates Stop-and-wait ARQ and the RTT for the packet
+   flow is also analyzed.
   
    The program was tested on :
 	gcc version: 10.1.0
